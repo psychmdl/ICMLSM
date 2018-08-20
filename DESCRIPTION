@@ -1,0 +1,11 @@
+Package: ICMLSM
+Type: Package
+Title: Simulates the ICM and LSM
+Version: 0.1.0
+Author: Mark Lowry
+Maintainer: Mark Lowry <mlowry@mail.usf.edu>
+Description: Testing the ICM and LSM Models
+License: NA
+Encoding: UTF-8
+LazyData: true
+Imports: gamlss.dist, retimes
