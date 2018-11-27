@@ -38,7 +38,10 @@ ICMSimulation <- function(
   h1 = 1,
   h2 = 1,
   Y1 = 5*(h1 + L1_Strength),
-  Y2 = 5*(h2 + L2_Strength)
+  Y2 = 5*(h2 + L2_Strength),
+  NoiseMu = rnorm(1, 720, 50),
+  NoiseTua = rnorm(1, 400, 50),
+  NoiseSigma = rnorm(1, 100, 5)
 ){
   listofdfs <- list()
   listofdfs2 <- list()
@@ -49,9 +52,9 @@ ICMSimulation <- function(
     #print(h)
 
     for(i in 1:Participants){
-      NoiseMu1 = rnorm(1, 520, 20)
-      NoiseTau1 = rnorm(1, 400, 10)
-      NoiseSigma1 = rnorm(1, 100, 10)
+      NoiseMu1 = NoiseMu
+      NoiseTau1 = NoiseTau
+      NoiseSigma1 = NoiseSigma
       x = rep(LangOrder, Num_SubBlocks)
       y = rep(SwitchOrder, Num_SubBlocks)
       z = c(rep(SemantOrder1, Num_SubBlocks/2), rep(SemantOrder2, Num_SubBlocks/2))
