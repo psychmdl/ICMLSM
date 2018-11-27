@@ -24,8 +24,8 @@ LSM_Fit <- function(
     Simulated_Data2 <- x$Simulation.Results[seq(1, 11, 2),]$Mean.RT
     Simulated_Data[i] <- data.frame(Simulated_Data1, Simulated_Data2)
 
-    cor1[i] <- cor(Simulated_Data1[i], Observed_Data1)
-    cor2[i] <- cor(Simulated_Data2[i], Observed_Data2)
+    cor1[i] <- cor(Simulated_Data1, Observed_Data1)
+    cor2[i] <- cor(Simulated_Data2, Observed_Data2)
     hrecord[i] = h
     L1Record[i] = L1Strength
   }
