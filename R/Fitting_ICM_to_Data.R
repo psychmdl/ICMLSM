@@ -16,9 +16,9 @@ ICM_Fit <- function(
     L1Strength = runif(1, 1, 10)
     L1Record <- vector()
     h = runif(1, 1, 10) #Language Activation parameter on switch trials = h*3
-    hrecord = vector()
-    cor1 = vector()
-    cor2 = vector()
+    hrecord <- vector()
+    cor1 <- vector()
+    cor2 <- vector()
     x = ICMSimulation(Simulations = 1, Participants = 2, Num_SubBlocks = 8, Simulations = Trial_Comparisons = c(1,2,3,4,5,6), Comp = competition, h1 = h, h2 = h, L1_Strength = L1Strength, L2_Strength = L1Strength)
     Simulated_Data1 <- x$Simulation.Results[seq(2, 12, 2),]$Mean.RT
     Simulated_Data2 <- x$Simulation.Results[seq(1, 11, 2),]$Mean.RT
