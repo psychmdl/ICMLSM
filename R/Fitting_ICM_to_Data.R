@@ -23,8 +23,8 @@ ICM_Fit <- function(
     chi <- vector()
     pval <- vector()
     x = ICMSimulation(Simulations = 1, Participants = 1, Num_SubBlocks = 8, Trial_Comparisons = c(1,2,3,4,5,6), Comp = competition, h1 = h, h2 = h, L1_Strength = L1Strength, L2_Strength = L1Strength, NoiseMu = .0001, NoiseTau = .0001, NoiseSigma = .001)
-    Simulated_Data1 <- as.vector(x$Simulation.Results[seq(2, 12, 2),]$Mean.RT)
-    Simulated_Data2 <- as.vector(x$Simulation.Results[seq(1, 11, 2),]$Mean.RT)
+    Simulated_Data1 <- x$Simulation.Results[seq(2, 12, 2),]$Mean.RT
+    Simulated_Data2 <- x$Simulation.Results[seq(1, 11, 2),]$Mean.RT
     Simulated_Data3 <- data.frame(Simulated_Data1, Simulated_Data2)
     Simulated_Data[[i]] <- Simulated_Data3
 
@@ -33,8 +33,8 @@ ICM_Fit <- function(
     hrecord[i] = h
     L1Record[i] = L1Strength
     comprecord[i] = competition
-    chi[i] <- as.numeric(chisq.test(SimulatedData3)[1])
-    pval[i] <- as.numeric(chisq.test(SimulatedData3)[3])
+    chi[i] <- as.numeric(chisq.test(Simulated_Data3)[1])
+    pval[i] <- as.numeric(chisq.test(Simulated_Data3)[3])
   }
   df1 <- data.frame(cor1, cor2, hrecord, L1Record, comprecord, chi, pval)
   df2 <- do.call("rbind", Simulated_Data)
