@@ -39,8 +39,8 @@ sim_single_trial <- function(
   c = 0.01,
   h1 = 1.5,
   h2 = 1.5,
-  Inh1 = h1*3.0,
-  Inh2 = h2*3.0
+  Inh1 = 3.0,
+  Inh2 = 3.0
 ){
   if((Semantic == "True") && (Switching == "Stay")){
     L1_Initial = L1_Activation
