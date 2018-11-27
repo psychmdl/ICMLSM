@@ -38,7 +38,10 @@ LSMSimulation <- function(
   h1 = 1.5,
   h2 = 1.5,
   Inh1 = 3.0,
-  Inh2 = 3.0
+  Inh2 = 3.0,
+  NoiseMu = rnorm(1, 720, 50),
+  NoiseTua = rnorm(1, 400, 50),
+  NoiseSigma = rnorm(1, 100, 5)
 ){
   listofdfs <- list()
   listofdfs2 <- list()
@@ -50,9 +53,9 @@ LSMSimulation <- function(
     pb = txtProgressBar(min = 0, max = Participants, style = 3)
 
     for(i in 1:Participants){
-      Noise1 = rnorm(1, 720, 50)
-      Noise2 = rnorm(1, 400, 50)
-      Noise3 = rnorm(1, 100, 5)
+      Noise1 = Noise1
+      Noise2 = Noise2
+      Noise3 = Noise3
       x = rep(LangOrder, Num_SubBlocks)
       y = rep(SwitchOrder, Num_SubBlocks)
       z = c(rep(SemantOrder1, Num_SubBlocks/2), rep(SemantOrder2, Num_SubBlocks/2))
