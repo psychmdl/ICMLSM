@@ -44,7 +44,7 @@ ICM_Fit <- function(
     pval2[i] <- suppressWarnings(as.numeric(chisq.test(chidata2)[3]))
 
   }
-  df1 <- data.frame(cor1, cor2, hrecord, L1Record, comprecord, chi1, pval2, chi2, pval2)
+  df1 <- data.frame(cor1, cor2, hrecord, L1Record, comprecord, chi1, pval1, chi2, pval2)
   df2 <- do.call("rbind", Simulated_Data)
 
   resultsList <- list(fits = df1, SimData = df2)
