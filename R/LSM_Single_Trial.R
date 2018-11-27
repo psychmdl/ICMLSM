@@ -50,8 +50,9 @@ sim_single_trial <- function(
     L1_Initial_Others = L1_Others
     L2_Initial_Others = L2_Others
     if(Language == "L1"){
+      safe = 0
       repeat{
-        if((Comp <= L1_Activation/sum(L1_Others + L1_Distractors))){
+        if((Comp <= L1_Activation/sum(L1_Others + L1_Distractors)) | safe > 1000){
           break
         }
         SA2 = 1/(1+L2_Strength*exp(1)^(-t)) #semantic activation
@@ -68,6 +69,7 @@ sim_single_trial <- function(
 
         t = t + u
         RT_L1 = RT_L1 + 20*u*t
+        safe = safe + 1
       }
 
       RT = RT_L1
@@ -86,8 +88,9 @@ sim_single_trial <- function(
 
     }
     if(Language == "L2"){
+      safe = 0
       repeat{
-        if((Comp <= L2_Activation/sum(L2_Distractors + L2_Others))){
+        if((Comp <= L2_Activation/sum(L2_Distractors + L2_Others)) | safe > 1000){
           break
         }
         SA2 = 1/(1+L2_Strength*exp(1)^(-t)) #semantic activation
@@ -103,6 +106,7 @@ sim_single_trial <- function(
         L1_Activation = L1_Initial + p1*SA1 + p1*DK1
         t = t + u
         RT_L2 = RT_L2 + 20*u*t
+        safe = safe +1
       }
 
       RT = RT_L2
@@ -133,8 +137,9 @@ sim_single_trial <- function(
     L2_Initial_D = 1.5
     L2_Initial_Others = 1.5
     if(Language == "L1"){
+      safe = 0
       repeat{
-        if((Comp <= L1_Activation/sum(L1_Others + L1_Distractors))){
+        if((Comp <= L1_Activation/sum(L1_Others + L1_Distractors))| safe >1000){
           break
         }
         SA2 = 1/(1+L2_Strength*exp(1)^(-t)) #semantic activation
@@ -151,6 +156,7 @@ sim_single_trial <- function(
 
         t = t + u
         RT_L1 = RT_L1 + 20*u*t
+        safe = safe + 1
       }
 
       RT = RT_L1
@@ -169,8 +175,9 @@ sim_single_trial <- function(
       L2_Others =(L2_Others - L2_Initial_Others)*exp(1)^(-c*ISI) + L2_Initial_Others
     }
     if(Language == "L2"){
+      safe = 0
       repeat{
-        if((Comp <= L2_Activation/sum(L2_Distractors + L2_Others))){
+        if((Comp <= L2_Activation/sum(L2_Distractors + L2_Others)) | safe > 1000){
           break
         }
         SA2 = 1/(1+L2_Strength*exp(1)^(-t)) #semantic activation
@@ -186,6 +193,7 @@ sim_single_trial <- function(
         L1_Activation = L1_Initial + p1*SA1 + p1*DK1
         t = t + u
         RT_L2 = RT_L2 + 20*u*t
+        safe = safe + 1
       }
 
       RT = RT_L2
@@ -214,7 +222,8 @@ sim_single_trial <- function(
     if(Language == "L1"){
 
       repeat{
-        if((Comp <= L1_Activation/sum(L1_Others + L1_Distractors))){
+        safe = 0
+        if((Comp <= L1_Activation/sum(L1_Others + L1_Distractors)) | safe > 1000){
           break
         }
         SA2 = 1/(1+(Inh2*h2)*L2_Strength*exp(1)^(-t)) #semantic activation
@@ -230,6 +239,7 @@ sim_single_trial <- function(
         L1_Activation = L1_Initial + p1*SA1 + p1*DK1
         t = t + u
         RT_L1 = RT_L1 + 20*u*t
+        safe = safe + 1
       }
 
       RT = RT_L1
@@ -248,9 +258,9 @@ sim_single_trial <- function(
       L2_Others =(L2_Others - L2_Initial_Others)*exp(1)^(-c*ISI) + L2_Initial_Others
     }
     if(Language == "L2"){
-
+    safe = 0
       repeat{
-        if((Comp <= L2_Activation/sum(L2_Distractors + L2_Others))){
+        if((Comp <= L2_Activation/sum(L2_Distractors + L2_Others)) | safe > 1000){
           break
         }
         SA2 = 1/(1+(Inh2*h2)*L2_Strength*exp(1)^(-t)) #semantic activation
@@ -266,6 +276,7 @@ sim_single_trial <- function(
         L1_Activation = L1_Initial + p1*SA1 + p1*DK1
         t = t + u
         RT_L2 = RT_L2 + 20*u*t
+        safe = safe + 1
       }
 
       RT = RT_L2
@@ -293,9 +304,10 @@ sim_single_trial <- function(
     L1_Initial_Others = 3
     L2_Initial_Others = 1.5
     if(Language == "L1"){
+      safe = 0
 
       repeat{
-        if((Comp <= L1_Activation/sum(L1_Others + L1_Distractors))){
+        if((Comp <= L1_Activation/sum(L1_Others + L1_Distractors)) | safe > 1000 ){
           break
         }
         SA2 = 1/(1+(Inh2*h2)*L2_Strength*exp(1)^(-t)) #semantic activation
@@ -312,6 +324,7 @@ sim_single_trial <- function(
 
         t = t + u
         RT_L1 = RT_L1 + 20*u*t
+        safe = safe +1
       }
 
       RT = RT_L1
@@ -330,9 +343,9 @@ sim_single_trial <- function(
       L2_Others =(L2_Others - L2_Initial_Others)*exp(1)^(-c*ISI) + L2_Initial_Others
     }
     if(Language == "L2"){
-
+      safe = 0
       repeat{
-        if((Comp <= L2_Activation/sum(L2_Distractors + L2_Others))){
+        if((Comp <= L2_Activation/sum(L2_Distractors + L2_Others)) | safe > 1000){
           break
         }
         SA2 = 1/(1+(Inh2*h2)*L2_Strength*exp(1)^(-t)) #semantic activation
@@ -348,6 +361,7 @@ sim_single_trial <- function(
         L1_Activation = L1_Initial + p1*SA1 + p1*DK1
         t = t + u
         RT_L2 = RT_L2 + 20*u*t
+        safe = safe + 1
       }
       RT = RT_L2
 
