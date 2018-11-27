@@ -40,7 +40,7 @@ LSMSimulation <- function(
   Inh1 = 3.0,
   Inh2 = 3.0,
   NoiseMu = rnorm(1, 720, 50),
-  NoiseTua = rnorm(1, 400, 50),
+  NoiseTau = rnorm(1, 400, 50),
   NoiseSigma = rnorm(1, 100, 5)
 ){
   listofdfs <- list()

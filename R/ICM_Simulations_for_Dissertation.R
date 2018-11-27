@@ -40,7 +40,7 @@ ICMSimulation <- function(
   Y1 = 5*(h1 + L1_Strength),
   Y2 = 5*(h2 + L2_Strength),
   NoiseMu = rnorm(1, 720, 50),
-  NoiseTua = rnorm(1, 400, 50),
+  NoiseTau = rnorm(1, 400, 50),
   NoiseSigma = rnorm(1, 100, 5)
 ){
   listofdfs <- list()
