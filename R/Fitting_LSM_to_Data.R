@@ -18,16 +18,16 @@ LSM_Fit <- function(
   pval1 <- vector()
   chi2 <- vector()
   pval2 <- vector()
+  L1Record <- vector()
+  comprecord <- vector()
   for(i in 1:Num_Sims){
     competition = runif(1, 0, .75)
-    comprecord <- vector()
     L1Strength = runif(1, 1, 10)
-    L1Record <- vector()
     h = runif(1, 1, 10) #Language Activation parameter on switch trials = h*3
     x = LSMSimulation(Simulations = 1, Participants = 1, Num_SubBlocks = 8, Trial_Comparisons = c(1,2,3,4,5,6), Comp = competition, h1 = h, h2 = h, L1_Strength = L1Strength, L2_Strength = L1Strength, NoiseMu = .0001, NoiseTau = .0001, NoiseSigma = .001)
     Simulated_Data1 <- x$Simulation.Results[seq(2, 12, 2),]$Mean.RT
     Simulated_Data2 <- x$Simulation.Results[seq(1, 11, 2),]$Mean.RT
-    Simulated_Data3 <- data.frame(Simulated_Data1, Simulated_Data2)
+    Simulated_Data3 <- data.frame(Simulated_Data1, Simulated_Data2, Simulation = i)
     Simulated_Data[[i]] <- Simulated_Data3
 
     chidata1 <- data.frame(Simulated_Data1 +500 , Observed_Data1 +500) #Make Sure Chi Square isn't negative
