@@ -27,7 +27,7 @@ sim_single_trial_ICM <- function(
   RT_L1 = Noise,
   RT_L2 = Noise,
   t = 0.0,
-  u = .5, #changed from .01 to increase effect
+  u = 1, #changed from .01 to increase effect
   p1 = .75,
   p2 = ((1-p1)/5),
   p3 = ((1-p1)*(4/5)),

@@ -47,7 +47,6 @@ LSMSimulation <- function(
   listofdfs2 <- list()
   listofdfs3 <- list()
 
-  pb0 = txtProgressBar(min = 0, max = Simulations, style = 3)
   for(h in 1:Simulations){
     #print(h)
     pb = txtProgressBar(min = 0, max = Participants, style = 3)
@@ -113,9 +112,7 @@ LSMSimulation <- function(
       df = data.frame(Trial, Simulated_RT, x, y, z, L1Act, L2Act, L1_Dist, L2_Dist, L1_Max, L2_Max, L1_Max_Dist, L2_Max_Dist, L1_Init, L2_Init, L1_Init_D, L2_Init_D, L1_O, L2_O, L1_Init_O, L2_Init_O, Condition2 = Cond)
       df$Participant <- i
       listofdfs[[i]]<- df #Each Participant gets a df
-      setTxtProgressBar(pb,i)
     }
-    close(pb)
     All_Blocks2 = do.call("rbind", listofdfs) #Bind all the participants together into a big df
 
     comparison = vector()
@@ -142,10 +139,9 @@ LSMSimulation <- function(
 
     listofdfs2[[h]] <- df2
     Sys.sleep(.1)
-    setTxtProgressBar(pb0,h)
+    setTxtProgressBar(pb,h)
   }
   close(pb)
-  close(pb0)
   df3 <- do.call("rbind", listofdfs2)
   resultList <- list(Last_Simulation = All_Blocks2, Simulation.Results = df3)
 
