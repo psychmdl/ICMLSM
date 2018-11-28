@@ -220,9 +220,9 @@ sim_single_trial <- function(
     L1_Initial_D = L1_Distractors
     L2_Initial_D = L2_Distractors
     if(Language == "L1"){
-
+      safe = 0
       repeat{
-        safe = 0
+
         if((Comp <= L1_Activation/sum(L1_Others + L1_Distractors)) | safe > 1000){
           break
         }
