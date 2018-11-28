@@ -20,10 +20,12 @@ ICM_Fit <- function(
   pval2 <- vector()
   L1Record <- vector()
   comprecord <- vector()
+  RMS1 <- vector()
+  RMS2 <- vector()
   for(i in 1:Num_Sims){
     competition = runif(1, 0, .75)
     L1Strength = runif(1, 1, 10)
-    h = runif(1, 1, 10) #Language Activation parameter on switch trials = h*3
+    h = runif(1, .01, 10) #Language Activation parameter on switch trials = h*3
     x = ICMSimulation(Simulations = 1, Participants = 1, Num_SubBlocks = 8, Trial_Comparisons = c(1,2,3,4,5,6), Comp = competition, h1 = h, h2 = h, L1_Strength = L1Strength, L2_Strength = L1Strength, NoiseMu = .0001, NoiseTau = .0001, NoiseSigma = .001)
     Simulated_Data1 <- x$Simulation.Results[seq(2, 12, 2),]$Mean.RT
     Simulated_Data2 <- x$Simulation.Results[seq(1, 11, 2),]$Mean.RT
@@ -43,8 +45,11 @@ ICM_Fit <- function(
     chi2[i] <- suppressWarnings(as.numeric(chisq.test(chidata2)[1]))
     pval2[i] <- suppressWarnings(as.numeric(chisq.test(chidata2)[3]))
 
+    RMS1[i] <- sqrt(mean((Simulated_Data1 - Observed_Data1)^2))
+    RMS2[i] <- sqrt(mean((Simulated_Data2 - Observed_Data2)^2))
+
   }
-  df1 <- data.frame(cor1, cor2, hrecord, L1Record, comprecord, chi1, pval1, chi2, pval2)
+  df1 <- data.frame(cor1, cor2, hrecord, L1Record, comprecord, chi1, pval1, chi2, pval2, RMS1, RMS2)
   df2 <- do.call("rbind", Simulated_Data)
 
   resultsList <- list(fits = df1, SimData = df2)
