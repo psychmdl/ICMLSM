@@ -52,7 +52,7 @@ sim_single_trial_Abs <- function(
     if(Language == "L1"){
       safe = 0
       repeat{
-        if(L1_Activation >= Comp | safe > 1000){
+        if(( L1_Activation >= L1_Activation & L1_Activation >= Comp)  | safe > 1000){
           break
         }
         SA2 = 1/(1+L2_Strength*exp(1)^(-t)) #semantic activation
@@ -90,7 +90,7 @@ sim_single_trial_Abs <- function(
     if(Language == "L2"){
       safe = 0
       repeat{
-        if(L2_Activation >= Comp | safe > 1000){
+        if(( L2_Activation >= L2_Activation & L2_Activation >= Comp)  | safe > 1000){
           break
         }
         SA2 = 1/(1+L2_Strength*exp(1)^(-t)) #semantic activation
@@ -139,7 +139,7 @@ sim_single_trial_Abs <- function(
     if(Language == "L1"){
       safe = 0
       repeat{
-        if(L1_Activation >= Comp| safe >1000){
+        if(( L1_Activation >= L1_Activation & L1_Activation >= Comp) | safe >1000){
           break
         }
         SA2 = 1/(1+L2_Strength*exp(1)^(-t)) #semantic activation
@@ -177,7 +177,7 @@ sim_single_trial_Abs <- function(
     if(Language == "L2"){
       safe = 0
       repeat{
-        if(L2_Activation >= Comp | safe > 1000){
+        if(( L2_Activation >= L2_Activation & L2_Activation) >= Comp  | safe > 1000){
           break
         }
         SA2 = 1/(1+L2_Strength*exp(1)^(-t)) #semantic activation
@@ -223,7 +223,7 @@ sim_single_trial_Abs <- function(
       safe = 0
       repeat{
 
-        if(L1_Activation >= Comp | safe > 1000){
+        if(( L1_Activation >= L1_Activation & L1_Activation >= Comp)  | safe > 1000){
           break
         }
         SA2 = 1/(1+(Inh2*h2)*L2_Strength*exp(1)^(-t)) #semantic activation
@@ -260,7 +260,7 @@ sim_single_trial_Abs <- function(
     if(Language == "L2"){
     safe = 0
       repeat{
-        if(L2_Activation >= Comp | safe > 1000){
+        if(( L2_Activation >= L2_Activation & L2_Activation >= Comp)  | safe > 1000){
           break
         }
         SA2 = 1/(1+(Inh2*h2)*L2_Strength*exp(1)^(-t)) #semantic activation
@@ -307,7 +307,7 @@ sim_single_trial_Abs <- function(
       safe = 0
 
       repeat{
-        if(L1_Activation >= Comp | safe > 1000 ){
+        if(( L1_Activation >= L1_Activation & L1_Activation >= Comp)  | safe > 1000 ){
           break
         }
         SA2 = 1/(1+(Inh2*h2)*L2_Strength*exp(1)^(-t)) #semantic activation
@@ -345,7 +345,7 @@ sim_single_trial_Abs <- function(
     if(Language == "L2"){
       safe = 0
       repeat{
-        if(L2_Activation >= Comp | safe > 1000){
+        if(( L2_Activation >= L2_Activation & L2_Activation >= Comp)  | safe > 1000){
           break
         }
         SA2 = 1/(1+(Inh2*h2)*L2_Strength*exp(1)^(-t)) #semantic activation
