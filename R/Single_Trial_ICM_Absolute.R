@@ -11,19 +11,19 @@ sim_single_trial_ICM_Abs <- function(
   Noise = rexGAUS(1,NoiseMu,NoiseTau, NoiseSigma),
   Comp = 0.60,
   L1_Activation = 3, #rnorm(1, 4, .5),
-  L2_Activation = 1.5, #rnorm(1, 2, .5)
+  L2_Activation = 3.0, #rnorm(1, 2, .5)
   L1_Distractors = 3, #Most Active distractor
-  L2_Distractors = 1.5,
+  L2_Distractors = 3.0,
   L1_Initial = L1_Activation,
   L1_Initial_D = L1_Distractors,
   L2_Initial = L2_Activation,
   L2_Initial_D = L2_Distractors,
   L1_Others = 3, #other distractors that get spreading activation as well
-  L2_Others = 1.5,
+  L2_Others = 3.0,
   L1_Initial_Others = L1_Others,
   L2_Initial_Others = L2_Others,
-  L1_Strength = 1.5,
-  L2_Strength = 5,
+  L1_Strength = 3.0,
+  L2_Strength = 3.0,
   RT_L1 = Noise,
   RT_L2 = Noise,
   t = 0.0,
@@ -169,12 +169,12 @@ sim_single_trial_ICM_Abs <- function(
     }
     if(Language == "L2"){
       safe = 0
-      L2_Activation = 1.5
-      L2_Distractors = 1.5
-      L2_Initial = 1.5
-      L2_Initial_D = 1.5
-      L2_Others = 1.5
-      L2_Initial_Others = 1.5
+      L2_Activation = 3.0
+      L2_Distractors = 3.0
+      L2_Initial = 3.0
+      L2_Initial_D = 3.0
+      L2_Others = 3.0
+      L2_Initial_Others = 3.0
 
       L1_Initial = L1_Initial
       L1_Initial_D = L1_Initial_D
@@ -278,7 +278,7 @@ sim_single_trial_ICM_Abs <- function(
     if(Language == "L2"){
       safe = 0
       repeat{
-        if(L2_Initial >=1.5 && L2_Initial_D >= 1.5 && L2_Initial_Others >= 1.5 | safe > 1000){
+        if(L2_Initial >=3.0 && L2_Initial_D >= 3.0 && L2_Initial_Others >= 3.0 | safe > 1000){
           break
         }
         RA = 1/(1+(Y2)*exp(1)^(-t)) #RA = Reactivation
@@ -335,12 +335,12 @@ sim_single_trial_ICM_Abs <- function(
 
     if(Language == "L1"){
       safe = 0
-      L2_Activation = 1.5
-      L2_Distractors = 1.5
-      L2_Initial = 1.5
-      L2_Initial_D = 1.5
-      L2_Others = 1.5
-      L2_Initial_Others = 1.5
+      L2_Activation = 3.0
+      L2_Distractors = 3.0
+      L2_Initial = 3.0
+      L2_Initial_D = 3.0
+      L2_Others = 3.0
+      L2_Initial_Others = 3.0
 
       L1_Initial = L1_Initial
       L1_Initial_D = L1_Initial_D
@@ -411,7 +411,7 @@ sim_single_trial_ICM_Abs <- function(
       L2_Initial_Others = L2_Others
 
       repeat{
-        if(L2_Initial >=1.5 && L2_Initial_D >= 1.5 && L2_Initial_Others >= 1.5 | safe > 1000){
+        if(L2_Initial >=3.0 && L2_Initial_D >= 3.0 && L2_Initial_Others >= 3.0 | safe > 1000){
           break
         }
         RA = 1/(1+(Y2)*exp(1)^(-t)) #RA = Reactivation
