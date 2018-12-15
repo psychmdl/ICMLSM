@@ -33,8 +33,8 @@ ICM_Fit_Abs <- function(
     Simulated_Data2 <- Simulated_Data2 - Simulated_Data2[1]
     Simulated_Data3 <- data.frame(Simulated_Data1, Simulated_Data2, Simulation = i)
     Simulated_Data[[i]] <- Simulated_Data3
-    chidata1 <- data.frame(Simulated_Data1 +500 , Observed_Data1 +500) #Make Sure chi square isn't negative
-    chidata2 <- data.frame(Simulated_Data2 +500 , Observed_Data2 + 500)
+    chidata1 <- data.frame(Simulated_Data1 +50000 , Observed_Data1 +50000) #Make Sure chi square isn't negative
+    chidata2 <- data.frame(Simulated_Data2 +50000 , Observed_Data2 + 50000)
 
     cor1[i] <- cor(Simulated_Data1, Observed_Data1)
     cor2[i] <- cor(Simulated_Data2, Observed_Data2)
