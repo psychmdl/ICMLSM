@@ -85,7 +85,7 @@ ICMSimulation_Abs <- function(
         if(k == 1){
           resp1 = sim_single_trial_ICM_Abs(Language = x[k], Switching = y[k], Semantic = z[k], Comp = Comp, L1_Activation = L1_Activation, L2_Activation = L2_Activation, L1_Distractors = L1_Distractors, L2_Distractors = L2_Distractors, L1_Initial = L1_Initial, L1_Initial_D = L1_Initial_D, L2_Initial = L2_Initial, L2_Initial_D = L2_Initial_D, L1_Others = L1_Others, L2_Others = L2_Others, L1_Initial_Others = L1_Initial_Others, L2_Initial_Others = L2_Initial_Others, L1_Strength = L1_Strength, L2_Strength = L2_Strength, t = t, u = u, p1 = p1, p2 = p2, p3 = p3, ISI = ISI,c = c, h1 = h1, h2 = h2, Noise = Noise1, Y1 = Y1, Y2 = Y2 )
         } else{
-          resp1 = sim_single_trial_ICM(Language = x[k], Switching = y[k], Semantic = z[k], L1_Activation = resp1$L1_Activation, L2_Activation = resp1$L2_Activation, L1_Distractors = resp1$L1_Distractors, L2_Distractors = resp1$L2_Distractors, L2_Others = resp1$L2_Others, L1_Others = resp1$L1_Others, t = t, u = u, p1 = p1, p2 = p2, p3 = p3, ISI = ISI,c = c, h1 = h1, h2 = h2, Comp = Comp, Noise = Noise1, Y1 = Y1, Y2 = Y2)
+          resp1 = sim_single_trial_ICM_Abs(Language = x[k], Switching = y[k], Semantic = z[k], L1_Activation = resp1$L1_Activation, L2_Activation = resp1$L2_Activation, L1_Distractors = resp1$L1_Distractors, L2_Distractors = resp1$L2_Distractors, L2_Others = resp1$L2_Others, L1_Others = resp1$L1_Others, t = t, u = u, p1 = p1, p2 = p2, p3 = p3, ISI = ISI,c = c, h1 = h1, h2 = h2, Comp = Comp, Noise = Noise1, Y1 = Y1, Y2 = Y2)
         }
 
         Simulated_RT[k] = resp1$RT
