@@ -35,7 +35,7 @@ sim_single_trial_ICM <- function(
   Y1 = 5*(h1 + L1_Strength),
   Y2 = 5*(h2 + L2_Strength)
 ){
-  if((Semantic == "True") && (Switching == "Stay")){ 
+  if((Semantic == "True") && (Switching == "Stay")){
     L1_Initial = L1_Activation
     L2_Initial = L2_Activation
     L1_Initial_D = L1_Distractors
@@ -44,38 +44,38 @@ sim_single_trial_ICM <- function(
     L2_Initial_Others = L2_Others
     if(Language == "L1"){
       repeat{
-        if((Comp <= L1_Activation/sum(L1_Others + L1_Distractors+L2_Activation+L2_Others+L2_Distractors))){ 
+        if((Comp <= L1_Activation/sum(L1_Others + L1_Distractors+L2_Activation+L2_Others+L2_Distractors))){
           break
         }
         SA = 1/(1+L1_Strength*exp(1)^(-t)) #semantic activation
         DK = (SA - (L1_Strength*exp(1)^(-t))/(1+L1_Strength*exp(1)^(-t))^2)*exp(1)^(c*u)
-        
-        L1_Distractors = L1_Initial_D + p3*SA + p3*DK
-        L1_Others = L1_Initial_Others + p2*SA + p2*DK
-        L1_Activation = L1_Initial + p1*SA + p1*DK
-        
+
+        L1_Distractors = L1_Initial_D + p3*SA #+ p3*DK
+        L1_Others = L1_Initial_Others + p2*SA #+ p2*DK
+        L1_Activation = L1_Initial + p1*SA #+ p1*DK
+
         L2_Distractors = L2_Initial_D*exp(1)^(-h2*t)
         L2_Others =  L2_Initial_Others*exp(1)^(-h2*t)
         L2_Activation =  L2_Initial*exp(1)^(-h2*t)
-        
+
         t = t + u
         RT_L1 = RT_L1 + 20*u*t
       }
-      
+
       RT = RT_L1
-      
+
       L1_Max_Activation = L1_Activation
       L1_Dist_Max = L1_Distractors
       L1_Distractors = (L1_Activation - L1_Initial)*exp(1)^(-c*ISI) + L1_Initial
       L1_Activation = (L1_Others - L1_Initial_Others)*exp(1)^(-c*ISI) + L1_Initial_Others
       L1_Others =(L1_Others - L1_Initial_Others)*exp(1)^(-c*ISI) + L1_Initial_Others
-      
+
       L2_Max_Activation = L2_Activation
       L2_Distractors = L2_Max_Activation*exp(1)^(-c*ISI)
       L2_Dist_Max = L2_Distractors
       L2_Others = L2_Others*exp(1)^(-c*ISI)
       L2_Activation = L2_Others*exp(1)^(-c*ISI)
-      
+
     }
     if(Language == "L2"){
       repeat{
@@ -84,27 +84,27 @@ sim_single_trial_ICM <- function(
         }
         SA = 1/(1+L2_Strength*exp(1)^(-t)) #semantic activation
         DK = (SA - (L2_Strength*exp(1)^(-t))/(1+L2_Strength*exp(1)^(-t))^2)*exp(1)^(c*u)
-        
-        L2_Distractors = L2_Initial_D + p3*SA + p3*DK
-        L2_Others = L2_Initial_Others + p2*SA + p2*DK
-        L2_Activation = L2_Initial + p1*SA + p1*DK
-        
+
+        L2_Distractors = L2_Initial_D + p3*SA #+ p3*DK
+        L2_Others = L2_Initial_Others + p2*SA #+ p2*DK
+        L2_Activation = L2_Initial + p1*SA #+ p1*DK
+
         L1_Distractors = L1_Initial_D*exp(1)^(-h1*t)
         L1_Others =  L1_Initial_Others*exp(1)^(-h1*t)
         L1_Activation =  L1_Initial*exp(1)^(-h1*t)
         t = t + u
         RT_L2 = RT_L2 + 20*u*t
       }
-      
+
       RT = RT_L2
-      
-      
+
+
       L2_Max_Activation = L2_Activation
       L2_Dist_Max = L2_Distractors
       L2_Distractors = (L2_Activation - L2_Initial)*exp(1)^(-c*ISI) + L2_Initial
       L2_Activation = (L2_Others - L2_Initial_Others)*exp(1)^(-c*ISI) + L2_Initial_Others
       L2_Others =(L2_Others - L2_Initial_Others)*exp(1)^(-c*ISI) + L2_Initial_Others
-      
+
       L1_Max_Activation = L1_Activation
       L1_Distractors = L1_Max_Activation*exp(1)^(-c*ISI)
       L1_Dist_Max = L1_Distractors
@@ -120,38 +120,38 @@ sim_single_trial_ICM <- function(
       L1_Distractors = 3
       L1_Initial_Others = 3
       L1_Others = 3
-      
+
       L2_Initial = L2_Initial
       L2_Initial_D = L2_Initial_D
       L2_Initial_Others = L2_Others
       repeat{
-        if((Comp <= L1_Activation/sum(L1_Others + L1_Distractors+L2_Activation+L2_Others+L2_Distractors))){ 
+        if((Comp <= L1_Activation/sum(L1_Others + L1_Distractors+L2_Activation+L2_Others+L2_Distractors))){
           break
         }
         SA = 1/(1+L1_Strength*exp(1)^(-t)) #semantic activation
         DK = (SA - (L1_Strength*exp(1)^(-t))/(1+L1_Strength*exp(1)^(-t))^2)*exp(1)^(c*u)
-        
-        L1_Distractors = L1_Initial_D + p3*SA + p3*DK
-        L1_Others = L1_Initial_Others + p2*SA + p2*DK
-        L1_Activation = L1_Initial + p1*SA + p1*DK
-        
+
+        L1_Distractors = L1_Initial_D + p3*SA #+ p3*DK
+        L1_Others = L1_Initial_Others + p2*SA #+ p2*DK
+        L1_Activation = L1_Initial + p1*SA #+ p1*DK
+
         L2_Distractors = L2_Initial_D*exp(1)^(-h2*t)
         L2_Others =  L2_Initial_Others*exp(1)^(-h2*t)
         L2_Activation =  L2_Initial*exp(1)^(-h2*t)
-        
+
         t = t + u
         RT_L1 = RT_L1 + 20*u*t
       }
-      
+
       RT = RT_L1
-      
-      
+
+
       L1_Max_Activation = L1_Activation
       L1_Dist_Max = L1_Distractors
       L1_Distractors = (L1_Activation - L1_Initial)*exp(1)^(-c*ISI) + L1_Initial
       L1_Activation = (L1_Others - L1_Initial_Others)*exp(1)^(-c*ISI) + L1_Initial_Others
       L1_Others =(L1_Others - L1_Initial_Others)*exp(1)^(-c*ISI) + L1_Initial_Others
-      
+
       L2_Max_Activation = L2_Activation
       L2_Distractors = L2_Max_Activation*exp(1)^(-c*ISI)
       L2_Dist_Max = L2_Distractors
@@ -165,7 +165,7 @@ sim_single_trial_ICM <- function(
       L2_Initial_D = 1.5
       L2_Others = 1.5
       L2_Initial_Others = 1.5
-      
+
       L1_Initial = L1_Initial
       L1_Initial_D = L1_Initial_D
       L1_Initial_Others = L1_Initial_Others
@@ -175,27 +175,27 @@ sim_single_trial_ICM <- function(
         }
         SA = 1/(1+L2_Strength*exp(1)^(-t)) #semantic activation
         DK = (SA - (L2_Strength*exp(1)^(-t))/(1+L2_Strength*exp(1)^(-t))^2)*exp(1)^(c*u)
-        
-        L2_Distractors = L2_Initial_D + p3*SA + p3*DK
-        L2_Others = L2_Initial_Others + p2*SA + p2*DK
-        L2_Activation = L2_Initial + p1*SA + p1*DK
-        
+
+        L2_Distractors = L2_Initial_D + p3*SA #+ p3*DK
+        L2_Others = L2_Initial_Others + p2*SA #+ p2*DK
+        L2_Activation = L2_Initial + p1*SA #+ p1*DK
+
         L1_Distractors = L1_Initial_D*exp(1)^(-h1*t)
         L1_Others =  L1_Initial_Others*exp(1)^(-h1*t)
         L1_Activation =  L1_Initial*exp(1)^(-h1*t)
         t = t + u
         RT_L2 = RT_L2 + 20*u*t
       }
-      
+
       RT = RT_L2
-      
-      
+
+
       L2_Max_Activation = L2_Activation
       L2_Dist_Max = L2_Distractors
       L2_Distractors = (L2_Activation - L2_Initial)*exp(1)^(-c*ISI) + L2_Initial
       L2_Activation = (L2_Others - L2_Initial_Others)*exp(1)^(-c*ISI) + L2_Initial_Others
       L2_Others =(L2_Others - L2_Initial_Others)*exp(1)^(-c*ISI) + L2_Initial_Others
-      
+
       L1_Max_Activation = L1_Activation
       L1_Distractors = L1_Max_Activation*exp(1)^(-c*ISI)
       L1_Dist_Max = L1_Distractors
@@ -219,24 +219,24 @@ sim_single_trial_ICM <- function(
         L1_Initial = L1_Initial + RA
         L1_Initial_D  = L1_Initial_D + RA
         L1_Initial_Others = L1_Initial_Others + RA
-        
+
         L2_Distractors = L2_Initial_D*exp(1)^(-h2*t)
         L2_Others =  L2_Initial_Others*exp(1)^(-h2*t)
         L2_Activation =  L2_Initial*exp(1)^(-h2*t)
         t = t + u
       }
       t1= t-t
-      
+
       repeat{
-        if((Comp <= L1_Activation/sum(L1_Others + L1_Distractors+L2_Activation+L2_Others+L2_Distractors))){ 
+        if((Comp <= L1_Activation/sum(L1_Others + L1_Distractors+L2_Activation+L2_Others+L2_Distractors))){
           break
         }
         SA = 1/(1+(Y1)*exp(1)^(-t1)) #semantic activation
         DK = (SA - ((Y1)*exp(1)^(-t1))/(1+(Y1)*exp(1)^(-t1))^2)*exp(1)^(c*u)
-        L1_Distractors = L1_Initial_D + p3*SA + p3*DK
-        L1_Others = L1_Initial_Others + p2*SA + p2*DK
-        L1_Activation = L1_Initial + p1*SA + p1*DK
-        
+        L1_Distractors = L1_Initial_D + p3*SA #+ p3*DK
+        L1_Others = L1_Initial_Others + p2*SA #+ p2*DK
+        L1_Activation = L1_Initial + p1*SA #+ p1*DK
+
         L2_Distractors = L2_Initial_D*exp(1)^(-h2*t)
         L2_Others =  L2_Initial_Others*exp(1)^(-h2*t)
         L2_Activation =  L2_Initial*exp(1)^(-h2*t)
@@ -244,16 +244,16 @@ sim_single_trial_ICM <- function(
         t1 = t1+u
         RT_L1 = RT_L1 + 20*u*t
       }
-      
+
       RT = RT_L1
-      
-      
+
+
       L1_Max_Activation = L1_Activation
       L1_Dist_Max = L1_Distractors
       L1_Distractors = (L1_Activation - L1_Initial)*exp(1)^(-c*ISI) + L1_Initial
       L1_Activation = (L1_Others - L1_Initial_Others)*exp(1)^(-c*ISI) + L1_Initial_Others
       L1_Others =(L1_Others - L1_Initial_Others)*exp(1)^(-c*ISI) + L1_Initial_Others
-      
+
       L2_Max_Activation = L2_Activation
       L2_Distractors = L2_Max_Activation*exp(1)^(-c*ISI)
       L2_Dist_Max = L2_Distractors
@@ -269,7 +269,7 @@ sim_single_trial_ICM <- function(
         L2_Initial = L2_Initial + RA
         L2_Initial_D  = L2_Initial_D + RA
         L2_Initial_Others = L2_Initial_Others + RA
-        
+
         L1_Distractors = L1_Initial_D*exp(1)^(-h1*t)
         L1_Others =  L1_Initial_Others*exp(1)^(-h1*t)
         L1_Activation =  L1_Initial*exp(1)^(-h1*t)
@@ -282,11 +282,11 @@ sim_single_trial_ICM <- function(
         }
         SA = 1/(1+(Y2)*exp(1)^(-t1)) #semantic activation
         DK = (SA - ((Y2)*exp(1)^(-t1))/(1+Y2*exp(1)^(-t1))^2)*exp(1)^(c*u)
-        
-        L2_Distractors = L2_Initial_D + p3*SA + p3*DK
-        L2_Others = L2_Initial_Others + p2*SA + p2*DK
-        L2_Activation = L2_Initial + p1*SA + p1*DK
-        
+
+        L2_Distractors = L2_Initial_D + p3*SA #+ p3*DK
+        L2_Others = L2_Initial_Others + p2*SA #+ p2*DK
+        L2_Activation = L2_Initial + p1*SA #+ p1*DK
+
         L1_Distractors = L1_Initial_D*exp(1)^(-h1*t)
         L1_Others =  L1_Initial_Others*exp(1)^(-h1*t)
         L1_Activation =  L1_Initial*exp(1)^(-h1*t)
@@ -294,26 +294,26 @@ sim_single_trial_ICM <- function(
         t1 = t1+u
         RT_L2 = RT_L2 + 20*u*t
       }
-      
+
       RT = RT_L2
-      
-      
+
+
       L2_Max_Activation = L2_Activation
       L2_Dist_Max = L2_Distractors
       L2_Distractors = (L2_Activation - L2_Initial)*exp(1)^(-c*ISI) + L2_Initial
       L2_Activation = (L2_Others - L2_Initial_Others)*exp(1)^(-c*ISI) + L2_Initial_Others
       L2_Others =(L2_Others - L2_Initial_Others)*exp(1)^(-c*ISI) + L2_Initial_Others
-      
+
       L1_Max_Activation = L1_Activation
       L1_Distractors = L1_Max_Activation*exp(1)^(-c*ISI)
       L1_Dist_Max = L1_Distractors
       L1_Others = L1_Others*exp(1)^(-c*ISI)
       L1_Activation = L1_Others*exp(1)^(-c*ISI)
-      
+
     }
   }
   if(Semantic == "False" && Switching == "Switch"){
-    
+
     if(Language == "L1"){
       L2_Activation = 1.5
       L2_Distractors = 1.5
@@ -321,11 +321,11 @@ sim_single_trial_ICM <- function(
       L2_Initial_D = 1.5
       L2_Others = 1.5
       L2_Initial_Others = 1.5
-      
+
       L1_Initial = L1_Initial
       L1_Initial_D = L1_Initial_D
       L1_Initial_Others = L1_Initial_Others
-      
+
       repeat{
         if(L1_Initial >=3 && L1_Initial_D >= 3 && L1_Initial_Others >= 3 ){
           break
@@ -334,7 +334,7 @@ sim_single_trial_ICM <- function(
         L1_Initial = L1_Initial + RA
         L1_Initial_D  = L1_Initial_D + RA
         L1_Initial_Others = L1_Initial_Others + RA
-        
+
         L2_Distractors = L2_Initial_D*exp(1)^(-h2*t)
         L2_Others =  L2_Initial_Others*exp(1)^(-h2*t)
         L2_Activation =  L2_Initial*exp(1)^(-h2*t)
@@ -342,15 +342,15 @@ sim_single_trial_ICM <- function(
       }
       t1 = t - t
       repeat{
-        if((Comp <= L1_Activation/sum(L1_Others + L1_Distractors+L2_Activation+L2_Others+L2_Distractors))){ 
+        if((Comp <= L1_Activation/sum(L1_Others + L1_Distractors+L2_Activation+L2_Others+L2_Distractors))){
           break
         }
         SA = 1/(1+(Y1)*exp(1)^(-t1)) #semantic activation
         DK = (SA - ((Y1)*exp(1)^(-t1))/(1+(Y1)*exp(1)^(-t1))^2)*exp(1)^(c*u)
-        L1_Distractors = L1_Initial_D + p3*SA + p3*DK
-        L1_Others = L1_Initial_Others + p2*SA + p2*DK
-        L1_Activation = L1_Initial + p1*SA + p1*DK
-        
+        L1_Distractors = L1_Initial_D + p3*SA #+ p3*DK
+        L1_Others = L1_Initial_Others + p2*SA #+ p2*DK
+        L1_Activation = L1_Initial + p1*SA #+ p1*DK
+
         L2_Distractors = L2_Initial_D*exp(1)^(-h2*t)
         L2_Others =  L2_Initial_Others*exp(1)^(-h2*t)
         L2_Activation =  L2_Initial*exp(1)^(-h2*t)
@@ -358,16 +358,16 @@ sim_single_trial_ICM <- function(
         t = t + u
         RT_L1 = RT_L1 + 20*u*t
       }
-      
+
       RT = RT_L1
-      
-      
+
+
       L1_Max_Activation = L1_Activation
       L1_Dist_Max = L1_Distractors
       L1_Distractors = (L1_Activation - L1_Initial)*exp(1)^(-c*ISI) + L1_Initial
       L1_Activation = (L1_Others - L1_Initial_Others)*exp(1)^(-c*ISI) + L1_Initial_Others
       L1_Others =(L1_Others - L1_Initial_Others)*exp(1)^(-c*ISI) + L1_Initial_Others
-      
+
       L2_Max_Activation = L2_Activation
       L2_Distractors = L2_Max_Activation*exp(1)^(-c*ISI)
       L2_Dist_Max = L2_Distractors
@@ -381,11 +381,11 @@ sim_single_trial_ICM <- function(
       L1_Distractors = 3
       L1_Initial_Others = 3
       L1_Others = 3
-      
+
       L2_Initial = L2_Initial
       L2_Initial_D = L2_Initial_D
       L2_Initial_Others = L2_Others
-      
+
       repeat{
         if(L2_Initial >=1.5 && L2_Initial_D >= 1.5 && L2_Initial_Others >= 1.5 ){
           break
@@ -394,7 +394,7 @@ sim_single_trial_ICM <- function(
         L2_Initial = L2_Initial + RA
         L2_Initial_D  = L2_Initial_D + RA
         L2_Initial_Others = L2_Initial_Others + RA
-        
+
         L1_Distractors = L1_Initial_D*exp(1)^(-h1*t)
         L1_Others =  L1_Initial_Others*exp(1)^(-h1*t)
         L1_Activation =  L1_Initial*exp(1)^(-h1*t)
@@ -407,11 +407,11 @@ sim_single_trial_ICM <- function(
         }
         SA = 1/(1+(Y2)*exp(1)^(-t1)) #semantic activation
         DK = (SA - ((Y2)*exp(1)^(-t1))/(1+Y2*exp(1)^(-t1))^2)*exp(1)^(c*u)
-        
-        L2_Distractors = L2_Initial_D + p3*SA + p3*DK
-        L2_Others = L2_Initial_Others + p2*SA + p2*DK
-        L2_Activation = L2_Initial + p1*SA + p1*DK
-        
+
+        L2_Distractors = L2_Initial_D + p3*SA #+ p3*DK
+        L2_Others = L2_Initial_Others + p2*SA #+ p2*DK
+        L2_Activation = L2_Initial + p1*SA #+ p1*DK
+
         L1_Distractors = L1_Initial_D*exp(1)^(-h1*t)
         L1_Others =  L1_Initial_Others*exp(1)^(-h1*t)
         L1_Activation =  L1_Initial*exp(1)^(-h1*t)
@@ -420,14 +420,14 @@ sim_single_trial_ICM <- function(
         RT_L2 = RT_L2 + 20*u*t
       }
       RT = RT_L2
-      
-      
+
+
       L2_Max_Activation = L2_Activation
       L2_Dist_Max = L2_Distractors
       L2_Distractors = (L2_Activation - L2_Initial)*exp(1)^(-c*ISI) + L2_Initial
       L2_Activation = (L2_Others - L2_Initial_Others)*exp(1)^(-c*ISI) + L2_Initial_Others
       L2_Others =(L2_Others - L2_Initial_Others)*exp(1)^(-c*ISI) + L2_Initial_Others
-      
+
       L1_Max_Activation = L1_Activation
       L1_Distractors = L1_Max_Activation*exp(1)^(-c*ISI)
       L1_Dist_Max = L1_Distractors
