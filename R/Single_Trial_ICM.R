@@ -54,9 +54,9 @@ sim_single_trial_ICM <- function(
         SA = 1/(1+L1_Strength*exp(1)^(-t)) #semantic activation
         DK = (SA - (L1_Strength*exp(1)^(-t))/(1+L1_Strength*exp(1)^(-t))^2)*exp(1)^(c*u)
 
-        L1_Distractors = L1_Initial_D + p3*SA #+ p3*DK
-        L1_Others = L1_Initial_Others + p2*SA #+ p2*DK
-        L1_Activation = L1_Initial + p1*SA #+ p1*DK
+        L1_Distractors = L1_Initial_D + p3*SA + p3*DK
+        L1_Others = L1_Initial_Others + p2*SA + p2*DK
+        L1_Activation = L1_Initial + p1*SA + p1*DK
 
         L2_Distractors = L2_Initial_D*exp(1)^(-h2*t)
         L2_Others =  L2_Initial_Others*exp(1)^(-h2*t)
@@ -91,9 +91,9 @@ sim_single_trial_ICM <- function(
         SA = 1/(1+L2_Strength*exp(1)^(-t)) #semantic activation
         DK = (SA - (L2_Strength*exp(1)^(-t))/(1+L2_Strength*exp(1)^(-t))^2)*exp(1)^(c*u)
 
-        L2_Distractors = L2_Initial_D + p3*SA #+ p3*DK
-        L2_Others = L2_Initial_Others + p2*SA #+ p2*DK
-        L2_Activation = L2_Initial + p1*SA #+ p1*DK
+        L2_Distractors = L2_Initial_D + p3*SA + p3*DK
+        L2_Others = L2_Initial_Others + p2*SA + p2*DK
+        L2_Activation = L2_Initial + p1*SA + p1*DK
 
         L1_Distractors = L1_Initial_D*exp(1)^(-h1*t)
         L1_Others =  L1_Initial_Others*exp(1)^(-h1*t)
@@ -139,9 +139,9 @@ sim_single_trial_ICM <- function(
         SA = 1/(1+L1_Strength*exp(1)^(-t)) #semantic activation
         DK = (SA - (L1_Strength*exp(1)^(-t))/(1+L1_Strength*exp(1)^(-t))^2)*exp(1)^(c*u)
 
-        L1_Distractors = L1_Initial_D + p3*SA #+ p3*DK
-        L1_Others = L1_Initial_Others + p2*SA #+ p2*DK
-        L1_Activation = L1_Initial + p1*SA #+ p1*DK
+        L1_Distractors = L1_Initial_D + p3*SA + p3*DK
+        L1_Others = L1_Initial_Others + p2*SA + p2*DK
+        L1_Activation = L1_Initial + p1*SA + p1*DK
 
         L2_Distractors = L2_Initial_D*exp(1)^(-h2*t)
         L2_Others =  L2_Initial_Others*exp(1)^(-h2*t)
@@ -186,9 +186,9 @@ sim_single_trial_ICM <- function(
         SA = 1/(1+L2_Strength*exp(1)^(-t)) #semantic activation
         DK = (SA - (L2_Strength*exp(1)^(-t))/(1+L2_Strength*exp(1)^(-t))^2)*exp(1)^(c*u)
 
-        L2_Distractors = L2_Initial_D + p3*SA #+ p3*DK
-        L2_Others = L2_Initial_Others + p2*SA #+ p2*DK
-        L2_Activation = L2_Initial + p1*SA #+ p1*DK
+        L2_Distractors = L2_Initial_D + p3*SA + p3*DK
+        L2_Others = L2_Initial_Others + p2*SA + p2*DK
+        L2_Activation = L2_Initial + p1*SA + p1*DK
 
         L1_Distractors = L1_Initial_D*exp(1)^(-h1*t)
         L1_Others =  L1_Initial_Others*exp(1)^(-h1*t)
@@ -247,9 +247,9 @@ sim_single_trial_ICM <- function(
         }
         SA = 1/(1+(Y1)*exp(1)^(-t1)) #semantic activation
         DK = (SA - ((Y1)*exp(1)^(-t1))/(1+(Y1)*exp(1)^(-t1))^2)*exp(1)^(c*u)
-        L1_Distractors = L1_Initial_D + p3*SA #+ p3*DK
-        L1_Others = L1_Initial_Others + p2*SA #+ p2*DK
-        L1_Activation = L1_Initial + p1*SA #+ p1*DK
+        L1_Distractors = L1_Initial_D + p3*SA + p3*DK
+        L1_Others = L1_Initial_Others + p2*SA + p2*DK
+        L1_Activation = L1_Initial + p1*SA + p1*DK
 
         L2_Distractors = L2_Initial_D*exp(1)^(-h2*t)
         L2_Others =  L2_Initial_Others*exp(1)^(-h2*t)
@@ -301,9 +301,9 @@ sim_single_trial_ICM <- function(
         SA = 1/(1+(Y2)*exp(1)^(-t1)) #semantic activation
         DK = (SA - ((Y2)*exp(1)^(-t1))/(1+Y2*exp(1)^(-t1))^2)*exp(1)^(c*u)
 
-        L2_Distractors = L2_Initial_D + p3*SA #+ p3*DK
-        L2_Others = L2_Initial_Others + p2*SA #+ p2*DK
-        L2_Activation = L2_Initial + p1*SA #+ p1*DK
+        L2_Distractors = L2_Initial_D + p3*SA + p3*DK
+        L2_Others = L2_Initial_Others + p2*SA + p2*DK
+        L2_Activation = L2_Initial + p1*SA + p1*DK
 
         L1_Distractors = L1_Initial_D*exp(1)^(-h1*t)
         L1_Others =  L1_Initial_Others*exp(1)^(-h1*t)
@@ -369,9 +369,9 @@ sim_single_trial_ICM <- function(
         }
         SA = 1/(1+(Y1)*exp(1)^(-t1)) #semantic activation
         DK = (SA - ((Y1)*exp(1)^(-t1))/(1+(Y1)*exp(1)^(-t1))^2)*exp(1)^(c*u)
-        L1_Distractors = L1_Initial_D + p3*SA #+ p3*DK
-        L1_Others = L1_Initial_Others + p2*SA #+ p2*DK
-        L1_Activation = L1_Initial + p1*SA #+ p1*DK
+        L1_Distractors = L1_Initial_D + p3*SA + p3*DK
+        L1_Others = L1_Initial_Others + p2*SA + p2*DK
+        L1_Activation = L1_Initial + p1*SA + p1*DK
 
         L2_Distractors = L2_Initial_D*exp(1)^(-h2*t)
         L2_Others =  L2_Initial_Others*exp(1)^(-h2*t)
@@ -435,9 +435,9 @@ sim_single_trial_ICM <- function(
         SA = 1/(1+(Y2)*exp(1)^(-t1)) #semantic activation
         DK = (SA - ((Y2)*exp(1)^(-t1))/(1+Y2*exp(1)^(-t1))^2)*exp(1)^(c*u)
 
-        L2_Distractors = L2_Initial_D + p3*SA #+ p3*DK
-        L2_Others = L2_Initial_Others + p2*SA #+ p2*DK
-        L2_Activation = L2_Initial + p1*SA #+ p1*DK
+        L2_Distractors = L2_Initial_D + p3*SA + p3*DK
+        L2_Others = L2_Initial_Others + p2*SA + p2*DK
+        L2_Activation = L2_Initial + p1*SA + p1*DK
 
         L1_Distractors = L1_Initial_D*exp(1)^(-h1*t)
         L1_Others =  L1_Initial_Others*exp(1)^(-h1*t)
