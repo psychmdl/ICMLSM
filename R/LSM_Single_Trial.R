@@ -1,8 +1,8 @@
 library(gamlss.dist)
 library(retimes)
 
-ifelse(isNamespaceLoaded("gamlss.dist") == FALSE,
-  paste0("Load Package gamlss.dist in order to run simulation"))
+#ifelse(isNamespaceLoaded("gamlss.dist") == FALSE,
+  #paste0("Load Package gamlss.dist in order to run simulation"))
 
 
 sim_single_trial <- function(
