@@ -381,4 +381,4 @@ sim_single_trial <- function(
   }
   response = data.frame(RT, L1_Activation, L2_Activation, L1_Distractors, L2_Distractors, L1_Max_Activation, L2_Max_Activation, L1_Dist_Max, L2_Dist_Max, L1_Initial, L2_Initial, L1_Initial_D, L2_Initial_D, L1_Others, L1_Initial_Others, L2_Others, L2_Initial_Others, Comp)
 }
-)
+
