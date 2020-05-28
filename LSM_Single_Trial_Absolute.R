@@ -63,9 +63,9 @@ sim_single_trial_Abs <- function(
 
         SA1 = 1/(1+ L1_Strength*exp(1)^(-t)) #semantic activation
         DK1 = (SA1 - (L1_Strength*exp(1)^(-t))/(1+L1_Strength*exp(1)^(-t))^2)*exp(1)^(c*u)
-        L1_Distractors = L1_Initial_D + p3*SA1 + p3*DK1
-        L1_Others = L1_Initial_Others + p2*SA1 + p2*DK1
-        L1_Activation = L1_Initial + p1*SA1 + p1*DK1
+        L1_Distractors = L1_Initial_D + p3*SA1 #+ p3*DK1
+        L1_Others = L1_Initial_Others + p2*SA1 #+ p2*DK1
+        L1_Activation = L1_Initial + p1*SA1 #+ p1*DK1
 
         t = t + u
         RT_L1 = RT_L1 + 20*u*t
@@ -101,9 +101,9 @@ sim_single_trial_Abs <- function(
 
         SA1 = 1/(1+ L1_Strength*exp(1)^(-t)) #semantic activation
         DK1 = (SA1 - (L1_Strength*exp(1)^(-t))/(1+L1_Strength*exp(1)^(-t))^2)*exp(1)^(c*u)
-        L1_Distractors = L1_Initial_D + p3*SA1 + p3*DK1
-        L1_Others = L1_Initial_Others + p2*SA1 + p2*DK1
-        L1_Activation = L1_Initial + p1*SA1 + p1*DK1
+        L1_Distractors = L1_Initial_D + p3*SA1 #+ p3*DK1
+        L1_Others = L1_Initial_Others + p2*SA1 #+ p2*DK1
+        L1_Activation = L1_Initial + p1*SA1 #+ p1*DK1
         t = t + u
         RT_L2 = RT_L2 + 20*u*t
         safe = safe +1
@@ -150,9 +150,9 @@ sim_single_trial_Abs <- function(
 
         SA1 = 1/(1+ L1_Strength*exp(1)^(-t)) #semantic activation
         DK1 = (SA1 - (L1_Strength*exp(1)^(-t))/(1+L1_Strength*exp(1)^(-t))^2)*exp(1)^(c*u)
-        L1_Distractors = L1_Initial_D + p3*SA1 + p3*DK1
-        L1_Others = L1_Initial_Others + p2*SA1 + p2*DK1
-        L1_Activation = L1_Initial + p1*SA1 + p1*DK1
+        L1_Distractors = L1_Initial_D + p3*SA1 #+ p3*DK1
+        L1_Others = L1_Initial_Others + p2*SA1 #+ p2*DK1
+        L1_Activation = L1_Initial + p1*SA1 #+ p1*DK1
 
         t = t + u
         RT_L1 = RT_L1 + 20*u*t
@@ -188,9 +188,9 @@ sim_single_trial_Abs <- function(
 
         SA1 = 1/(1+ L1_Strength*exp(1)^(-t)) #semantic activation
         DK1 = (SA1 - (L1_Strength*exp(1)^(-t))/(1+L1_Strength*exp(1)^(-t))^2)*exp(1)^(c*u)
-        L1_Distractors = L1_Initial_D + p3*SA1 + p3*DK1
-        L1_Others = L1_Initial_Others + p2*SA1 + p2*DK1
-        L1_Activation = L1_Initial + p1*SA1 + p1*DK1
+        L1_Distractors = L1_Initial_D + p3*SA1 #+ p3*DK1
+        L1_Others = L1_Initial_Others + p2*SA1 #+ p2*DK1
+        L1_Activation = L1_Initial + p1*SA1 #+ p1*DK1
         t = t + u
         RT_L2 = RT_L2 + 20*u*t
         safe = safe + 1
@@ -234,9 +234,9 @@ sim_single_trial_Abs <- function(
 
         SA1 = 1/(1+(Inh1*h1)*L1_Strength*exp(1)^(-t)) #semantic activation
         DK1 = (SA1 - ((Inh1*h1)*L1_Strength*exp(1)^(-t))/(1+L1_Strength*exp(1)^(-t))^2)*exp(1)^(c*u)
-        L1_Distractors = L1_Initial_D + p3*SA1 + p3*DK1
-        L1_Others = L1_Initial_Others + p2*SA1 + p2*DK1
-        L1_Activation = L1_Initial + p1*SA1 + p1*DK1
+        L1_Distractors = L1_Initial_D + p3*SA1 #+ p3*DK1
+        L1_Others = L1_Initial_Others + p2*SA1 #+ p2*DK1
+        L1_Activation = L1_Initial + p1*SA1 #+ p1*DK1
         t = t + u
         RT_L1 = RT_L1 + 20*u*t
         safe = safe + 1
@@ -271,9 +271,9 @@ sim_single_trial_Abs <- function(
 
         SA1 = 1/(1+(Inh1*h1)*L1_Strength*exp(1)^(-t)) #semantic activation
         DK1 = (SA1 - ((Inh1*h1)*L1_Strength*exp(1)^(-t))/(1+L1_Strength*exp(1)^(-t))^2)*exp(1)^(c*u)
-        L1_Distractors = L1_Initial_D + p3*SA1 + p3*DK1
-        L1_Others = L1_Initial_Others + p2*SA1 + p2*DK1
-        L1_Activation = L1_Initial + p1*SA1 + p1*DK1
+        L1_Distractors = L1_Initial_D + p3*SA1 #+ p3*DK1
+        L1_Others = L1_Initial_Others + p2*SA1 #+ p2*DK1
+        L1_Activation = L1_Initial + p1*SA1 #+ p1*DK1
         t = t + u
         RT_L2 = RT_L2 + 20*u*t
         safe = safe + 1
@@ -318,9 +318,9 @@ sim_single_trial_Abs <- function(
 
         SA1 = 1/(1+(Inh1*h1)*L1_Strength*exp(1)^(-t)) #semantic activation
         DK1 = (SA1 - ((Inh1*h1)*L1_Strength*exp(1)^(-t))/(1+L1_Strength*exp(1)^(-t))^2)*exp(1)^(c*u)
-        L1_Distractors = L1_Initial_D + p3*SA1 + p3*DK1
-        L1_Others = L1_Initial_Others + p2*SA1 + p2*DK1
-        L1_Activation = L1_Initial + p1*SA1 + p1*DK1
+        L1_Distractors = L1_Initial_D + p3*SA1 #+ p3*DK1
+        L1_Others = L1_Initial_Others + p2*SA1 #+ p2*DK1
+        L1_Activation = L1_Initial + p1*SA1 #+ p1*DK1
 
         t = t + u
         RT_L1 = RT_L1 + 20*u*t
@@ -356,9 +356,9 @@ sim_single_trial_Abs <- function(
 
         SA1 = 1/(1+(Inh1*h1)*L1_Strength*exp(1)^(-t)) #semantic activation
         DK1 = (SA1 - ((Inh1*h1)*L1_Strength*exp(1)^(-t))/(1+L1_Strength*exp(1)^(-t))^2)*exp(1)^(c*u)
-        L1_Distractors = L1_Initial_D + p3*SA1 + p3*DK1
-        L1_Others = L1_Initial_Others + p2*SA1 + p2*DK1
-        L1_Activation = L1_Initial + p1*SA1 + p1*DK1
+        L1_Distractors = L1_Initial_D + p3*SA1 #+ p3*DK1
+        L1_Others = L1_Initial_Others + p2*SA1 #+ p2*DK1
+        L1_Activation = L1_Initial + p1*SA1 #+ p1*DK1
         t = t + u
         RT_L2 = RT_L2 + 20*u*t
         safe = safe + 1
