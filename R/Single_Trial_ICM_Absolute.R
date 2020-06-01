@@ -347,7 +347,7 @@ sim_single_trial_ICM_Abs <- function(
       L1_Initial_Others = L1_Initial_Others
 
       repeat{
-        if(L1_Initial >=3 && L1_Initial_D >= 3 && L1_Initial_Others >= 3 | safe > 1000){
+        if(L1_Initial >=3 && L1_Initial_D >= 3 && L1_Initial_Others >= 3 || safe > 1000){
           break
         }
         RA = 1/(1+(Y1)*exp(1)^(-t)) #RA = Reactivation
