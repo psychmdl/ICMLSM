@@ -26,7 +26,11 @@ ICM_Fit_Abs <- function(
     competition = runif(1, 50, 500)
     L1Strength = runif(1, 15, 25)
     h = runif(1, 0.0001, 2) #Language Activation parameter on switch trials = h*3
+<<<<<<< HEAD
     x = ICMSimulation_Abs(Simulations = 1, Participants = 1, Num_SubBlocks = 8, Trial_Comparisons = c(1,2,3,4,5,6), Comp = competition, h1 = h, h2 = h, L1_Strength = L1Strength, L2_Strength = L1Strength, NoiseMu = .0001, NoiseTau = .0001, NoiseSigma = .001, p1 = 0.9)
+=======
+    x = ICMSimulation_Abs(Simulations = 1, Participants = 1, Num_SubBlocks = 8, Trial_Comparisons = c(1,2,3,4,5,6), Comp = competition, h1 = h, h2 = h, L1_Strength = L1Strength, L2_Strength = L1Strength, NoiseMu = .0001, NoiseTau = .0001, NoiseSigma = .001, p1 = 0.5)
+>>>>>>> 312f6d8fe86df9d267168dbd914698c7c7697046
     Simulated_Data1 <- x$Simulation.Results[seq(2, 12, 2),]$Mean.RT
     Simulated_Data1 <- Simulated_Data1 - Simulated_Data1[1]
     Simulated_Data2 <- x$Simulation.Results[seq(1, 11, 2),]$Mean.RT
