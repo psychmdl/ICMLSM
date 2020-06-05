@@ -48,7 +48,7 @@ sim_single_trial_ICM_Abs <- function(
     if(Language == "L1"){
       safe = 0
       repeat{
-        if(L1_Activation/(L2_Activation+L2_Others+L2_Distractors) >= Comp || safe > 1000){
+        if(L1_Activation/(3+L2_Activation+L2_Others+L2_Distractors) >= Comp || safe > 1000){
           break
         }
         SA = 1/(1+L1_Strength*exp(1)^(-t)) #semantic activation
@@ -85,7 +85,7 @@ sim_single_trial_ICM_Abs <- function(
     if(Language == "L2"){
       safe = 0
       repeat{
-        if(L2_Activation/(L1_Activation+L1_Others+L1_Distractors)  >= Comp || safe > 1000){
+        if(L2_Activation/(3+L1_Activation+L1_Others+L1_Distractors)  >= Comp || safe > 1000){
           break
         }
         SA = 1/(1+L2_Strength*exp(1)^(-t)) #semantic activation
@@ -133,7 +133,7 @@ sim_single_trial_ICM_Abs <- function(
       L2_Initial_Others = L2_Others
       safe = 0
       repeat{
-        if(L1_Activation/(L2_Activation+L2_Others+L2_Distractors)  >= Comp || safe > 1000){
+        if(L1_Activation/(3+L2_Activation+L2_Others+L2_Distractors)  >= Comp || safe > 1000){
           break
         }
         SA = 1/(1+L1_Strength*exp(1)^(-t)) #semantic activation
@@ -180,7 +180,7 @@ sim_single_trial_ICM_Abs <- function(
       L1_Initial_D = L1_Initial_D
       L1_Initial_Others = L1_Initial_Others
       repeat{
-        if(L2_Activation/(L1_Activation+L1_Others+L1_Distractors)  >= Comp || safe > 1000){
+        if(L2_Activation/(3+L1_Activation+L1_Others+L1_Distractors)  >= Comp || safe > 1000){
           break
         }
         SA = 1/(1+L2_Strength*exp(1)^(-t)) #semantic activation
@@ -242,7 +242,7 @@ sim_single_trial_ICM_Abs <- function(
       safe = 0
 
       repeat{
-        if(L1_Activation/(L2_Activation+L2_Others+L2_Distractors)  >= Comp || safe > 1000){
+        if(L1_Activation/(3+L2_Activation+L2_Others+L2_Distractors)  >= Comp || safe > 1000){
           break
         }
         SA = 1/(1+(Y1)*exp(1)^(-t1)) #semantic activation
@@ -295,7 +295,7 @@ sim_single_trial_ICM_Abs <- function(
       t1= t-t
       safe = 0
       repeat{
-        if(L2_Activation/(L1_Activation+L1_Others+L1_Distractors)  >= Comp || safe > 1000){
+        if(L2_Activation/(3+L1_Activation+L1_Others+L1_Distractors)  >= Comp || safe > 1000){
           break
         }
         SA = 1/(1+(Y2)*exp(1)^(-t1)) #semantic activation
@@ -364,7 +364,7 @@ sim_single_trial_ICM_Abs <- function(
       t1 = t - t
       safe = 0
       repeat{
-        if(L1_Activation/(L2_Activation+L2_Others+L2_Distractors)  >= Comp || safe > 1000){
+        if(L1_Activation/(3+L2_Activation+L2_Others+L2_Distractors)  >= Comp || safe > 1000){
           break
         }
         SA = 1/(1+(Y1)*exp(1)^(-t1)) #semantic activation
@@ -429,7 +429,7 @@ sim_single_trial_ICM_Abs <- function(
       safe = 0
 
       repeat{
-        if(L2_Activation/(L1_Activation+L1_Others+L1_Distractors)  >= Comp || safe > 1000){
+        if(L2_Activation/(3+L1_Activation+L1_Others+L1_Distractors)  >= Comp || safe > 1000){
           break
         }
         SA = 1/(1+(Y2)*exp(1)^(-t1)) #semantic activation
