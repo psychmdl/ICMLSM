@@ -23,7 +23,7 @@ ICM_Fit_Abs <- function(
   RMS1 <- vector()
   RMS2 <- vector()
   for(i in 1:Num_Sims){
-    competition = runif(1, 0.4, 0.65)
+    competition = runif(1, 0.5, 0.58)
     L1Strength = runif(1, 1, 10)
     h = runif(1, 0.001, 3) #Language Activation parameter on switch trials = h*3
 
