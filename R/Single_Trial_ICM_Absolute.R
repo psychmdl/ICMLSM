@@ -224,7 +224,7 @@ sim_single_trial_ICM_Abs <- function(
     if(Language == "L1"){
       safe = 0
       repeat{
-        if(L1_Initial >=3 && L1_Initial_D >= 3 && L1_Initial_Others >= 3 | safe > 1000){
+        if(L1_Initial >=3 && L1_Initial_D >= 3 && L1_Initial_Others >= 3 || safe > 1000){
           break
         }
         RA = 1/(1+(Y1)*exp(1)^(-t)) #RA = Reactivation
@@ -278,7 +278,7 @@ sim_single_trial_ICM_Abs <- function(
     if(Language == "L2"){
       safe = 0
       repeat{
-        if(L2_Initial >=3.0 && L2_Initial_D >= 3.0 && L2_Initial_Others >= 3.0 | safe > 1000){
+        if(L2_Initial >=3.0 && L2_Initial_D >= 3.0 && L2_Initial_Others >= 3.0 || safe > 1000){
           break
         }
         RA = 1/(1+(Y2)*exp(1)^(-t)) #RA = Reactivation
@@ -411,7 +411,7 @@ sim_single_trial_ICM_Abs <- function(
       L2_Initial_Others = L2_Others
 
       repeat{
-        if(L2_Initial >=3.0 && L2_Initial_D >= 3.0 && L2_Initial_Others >= 3.0 | safe > 1000){
+        if(L2_Initial >=3.0 && L2_Initial_D >= 3.0 && L2_Initial_Others >= 3.0 || safe > 1000){
           break
         }
         RA = 1/(1+(Y2)*exp(1)^(-t)) #RA = Reactivation
