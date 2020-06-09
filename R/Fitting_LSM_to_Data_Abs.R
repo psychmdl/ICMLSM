@@ -23,10 +23,10 @@ LSM_Fit_Abs <- function(
   RMS1 <- vector()
   RMS2 <- vector()
   for(i in 1:Num_Sims){
-    competition = runif(1, 3, 10)
-    L1Strength = runif(1, 15, 25)
+    competition = runif(1, 0.5, 0.58)
+    L1Strength = runif(1, 1, 10)
     h = runif(1, 0.0001, 10) #Language Activation parameter on switch trials = h*3*L1_Strength
-    x = LSMSimulation_Abs(Simulations = 1, Participants = 1, Num_SubBlocks = 8, Trial_Comparisons = c(1,2,3,4,5,6), Comp = competition, h1 = h, h2 = h, L1_Strength = L1Strength, L2_Strength = L1Strength, NoiseMu = .0001, NoiseTau = .0001, NoiseSigma = .001, p1 = 0.8, c= 1.0)
+    x = LSMSimulation_Abs(Simulations = 1, Participants = 1, Num_SubBlocks = 8, Trial_Comparisons = c(1,2,3,4,5,6), Comp = competition, h1 = h, h2 = h, L1_Strength = L1Strength, L2_Strength = L1Strength, NoiseMu = .0001, NoiseTau = .0001, NoiseSigma = .001, p1 = 0.35, c= .01)
     Simulated_Data1 <- x$Simulation.Results[seq(2, 12, 2),]$Mean.RT
     Simulated_Data1 <- Simulated_Data1 - Simulated_Data1[1]
     Simulated_Data2 <- x$Simulation.Results[seq(1, 11, 2),]$Mean.RT
