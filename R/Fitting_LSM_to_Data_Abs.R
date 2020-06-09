@@ -27,9 +27,9 @@ LSM_Fit_Abs <- function(
     L1Strength = runif(1, 1, 10)
     h = runif(1, 0.0001, 3) #Language Activation parameter on switch trials = h*3*L1_Strength
     x = LSMSimulation_Abs(Simulations = 1, Participants = 1, Num_SubBlocks = 8, Trial_Comparisons = c(1,2,3,4,5,6), Comp = competition, h1 = h, h2 = h, L1_Strength = L1Strength, L2_Strength = L1Strength, NoiseMu = .0001, NoiseTau = .0001, NoiseSigma = .001, p1 = 0.35, c= .01)
-    Simulated_Data1 <- x$Simulation.Results[seq(2, 12, 2),]$Mean.RT
+    Simulated_Data1 <- x$Simulation.Results[seq(1, 11, 2),]$Mean.RT
     Simulated_Data1 <- Simulated_Data1 - Simulated_Data1[1]
-    Simulated_Data2 <- x$Simulation.Results[seq(1, 11, 2),]$Mean.RT
+    Simulated_Data2 <- x$Simulation.Results[seq(2, 12, 2),]$Mean.RT
     Simulated_Data2 <- Simulated_Data2 - Simulated_Data2[1]
     Simulated_Data3 <- data.frame(Simulated_Data1, Simulated_Data2, Simulation = i)
     Simulated_Data[[i]] <- Simulated_Data3
