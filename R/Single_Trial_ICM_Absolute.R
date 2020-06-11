@@ -35,8 +35,8 @@ sim_single_trial_ICM_Abs <- function(
   c = .01,
   h1 = 1, #inhibition parameters
   h2 = 1,
-  Y1 = 3*(h1*L1_Strength), #Reactivation Parameters
-  Y2 = 3*(h1*L2_Strength)
+  Y1 = 10*(h1*L1_Strength), #Reactivation Parameters
+  Y2 = 10*(h1*L2_Strength)
 ){
   if((Semantic == "True") && (Switching == "Stay")){
     L1_Initial = L1_Activation
